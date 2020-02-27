@@ -46,7 +46,8 @@ public class TaskRepository {
         String sql = "SELECT id, description, deadline, done FROM task";
 
         try (Connection connection = DatabaseConfiguration.getConnection();
-             Statement statement = connection.createStatement(); ResultSet resultSet = statement.executeQuery(sql)) {
+             Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(sql)) {
 
             List<Task> tasks = new ArrayList<>();
             while (resultSet.next()) {
